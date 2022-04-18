@@ -25,5 +25,9 @@ class handler(BaseHTTPRequestHandler):
 
 if __name__== '__main__':
     with HTTPServer((host, port), handler) as server:
-        server.serve_forever()
+        try:
+            server.serve_forever()
+        except KeyboardInterrupt:
+            print("server is closing")
+            server.shutdown()
     
