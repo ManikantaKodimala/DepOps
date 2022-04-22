@@ -4,6 +4,6 @@ WORKDIR /code
 
 COPY . .
 
-EXPOSE 8765
+EXPOSE 8000
 
 CMD [ "python3", "./python_server.py" ]
