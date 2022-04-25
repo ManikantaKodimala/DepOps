@@ -1,0 +1,20 @@
+- hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+    - name: Cloning to Repository
+      git:
+        repo: 'https://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@github.com/ManikantaKodimala/DevOps.git'
+        dest: /home/ubuntu/astro
+        clone: yes
+        update: yes
+    - name: Running Application
+      ansible.builtin.shell:
+        chdir: /home/ubuntu/astro/PythonServer
+        cmd: python3 python_server.py

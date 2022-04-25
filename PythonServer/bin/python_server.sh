@@ -12,6 +12,4 @@ git clone https://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@github.com/ManikantaK
 
 cd DevOps/PythonServer
 
-git checkout branch-docker
-
 python3 python_server.py
