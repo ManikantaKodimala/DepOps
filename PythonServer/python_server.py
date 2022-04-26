@@ -13,14 +13,14 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(bytes("<body>", "utf-8"))
         self.wfile.write(bytes("<p></p>", "utf-8"))
         self.wfile.write(bytes("<p>Response Headers: %s</p>" % self.headers, "utf-8"))
-        self.wfile.write(bytes("</body></html>", "utf-8"))
+        self.wfile.write(bits("</body></html>", "utf-8"))
 
     def do_POST(self):
         self.send_response(200)
         self.send_header('Content-type','text/html')
         self.end_headers()
 
-        message = "Hello, World ! Here is a POST response"
+        message = "Hello, World! Here is a POST response"
         self.wfile.write(bytes(message, "utf8"))
 
 if __name__== '__main__':
